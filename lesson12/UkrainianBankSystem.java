@@ -7,19 +7,9 @@ public class UkrainianBankSystem implements BankSystem {
         // проверить лимит
         // достаточно ли денег
         //снять деньги
-//        int limitOfWithdrawal = user.getBank().getLimitWithdrawal();
-//        if(amount + user.getBank().getCommission(amount) > limitOfWithdrawal){
-//            printWithdrawalErrorMsg(amount, user);
-//            return;
-//        }
-//        if(amount + user.getBank().getCommission(amount) > user.getBalance()){
-//            printWithdrawalErrorMsg(amount, user);
-//            return;
-//        }
+
         if(!checkWithdraw(user, amount))
             return;
-
-       // double balanceAfterWithdraw = user.getBalance() - amount - user.getBank().getCommission(amount);
         user.setBalance(user.getBalance() - amount - amount * user.getBank().getCommission(amount));
     }
 
